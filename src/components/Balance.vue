@@ -1,12 +1,18 @@
-<script>
-export default {
-  name: "Balance"
-}
+<script setup>
+  import {defineProps} from 'vue'
+
+  const props = defineProps({
+    total: {
+      type: Number,
+      required: true
+    }
+  })
+
 </script>
 
 <template>
   <h4>Your balance</h4>
-  <h1 id="balance">$0.00</h1>
+  <h1 id="balance">{{total}}RSD</h1>
 </template>
 
 <style scoped>
