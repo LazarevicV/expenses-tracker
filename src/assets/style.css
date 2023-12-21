@@ -21,8 +21,9 @@ body {
 }
 
 .container {
-  margin: 30px auto;
-  width: 400px;
+  margin: 20px; /* Adjusted margin for better mobile view */
+  width: 100%; /* Full width for mobile devices */
+  max-width: 400px; /* Maximum width for larger screens */
 }
 
 h1 {
@@ -33,7 +34,7 @@ h1 {
 h3 {
   border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
-  margin: 40px 0 10px;
+  margin: 20px 0 10px;
 }
 
 h4 {
@@ -44,33 +45,27 @@ h4 {
 .inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 15px; /* Adjusted padding for better mobile view */
   display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
   justify-content: space-between;
   margin: 20px 0;
 }
 
 .inc-exp-container > div {
-  flex: 1;
+  flex-basis: 48%; /* Two items in a row for better mobile view */
   text-align: center;
+  margin-bottom: 10px; /* Adjusted margin for better mobile view */
 }
 
 .inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
+  border-right: none; /* Remove border for the first div in mobile view */
 }
 
 .money {
-  font-size: 20px;
+  font-size: 18px; /* Adjusted font size for better mobile view */
   letter-spacing: 1px;
   margin: 5px 0;
-}
-
-.money.plus {
-  color: #2ecc71;
-}
-
-.money.minus {
-  color: #c0392b;
 }
 
 label {
@@ -136,8 +131,8 @@ input[type='number'] {
   background-color: #e74c3c;
   border: 0;
   color: #fff;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 18px; /* Adjusted font size for better mobile view */
+  line-height: 18px; /* Adjusted line height for better mobile view */
   padding: 2px 5px;
   position: absolute;
   top: 50%;
@@ -149,4 +144,21 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 16px; /* Adjusted base font size for smaller screens */
+  }
+
+  .container {
+    margin: 10px; /* Adjusted margin for smaller screens */
+  }
+
+  .inc-exp-container > div {
+    flex-basis: 100%; /* Full width for each item in a row */
+    text-align: left; /* Adjust text alignment for mobile view */
+    border-right: none; /* Remove border for all divs in mobile view */
+  }
 }

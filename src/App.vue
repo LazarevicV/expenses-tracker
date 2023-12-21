@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <div class="container">
+  <div class="container p-12">
     <Balance :total="total" />
     <IncomeExpenses :income="+income" :expenses="+expenses" />
     <TransactionList
